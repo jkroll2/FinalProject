@@ -10,6 +10,12 @@ public class Project5
     public static void main (String[] args)
     {
         Account account = new Account(120, 20, 20, 20, 20, 20);
+        //calling methods to calculate percent spent on different categories and printing 
+        //out the percentage
+        double spent = account.calculateTotal(20,20,20,20,20);
+        System.out.println("You spent a total of" + spent + "dollars.");
+        double totalSaved = account.calculateTotalSaved(120,20,20,20,20,20);
+        System.out.println("You have saved" + totalSaved + "dollars.");
         double clothes = account.calculateClothesPercent(120, 20);
         System.out.println("You spent" + clothes + "percent on clothes.");
         double food = account.calculateFoodPercent(120,20);
@@ -22,6 +28,7 @@ public class Project5
         System.out.println("You spent" + entertainment + "percent on entertainment.");
         double saved = account.calculateSavedPercent(120,20,20,20,20,20);
         System.out.println("You saved" + saved + "percent.");
+        //figuring out what the user spent the most money on
         if(clothes>food && clothes>rent && clothes>bills && clothes>entertainment &&clothes>saved){
             System.out.println("You spent the most on clothes.");
         }else if(food>clothes && food>rent && food> bills && food>entertainment && food>saved){
@@ -37,6 +44,5 @@ public class Project5
         }else{
             System.out.println("You spent the same amount on everything.");
         }
-
-    }
+}
 }
